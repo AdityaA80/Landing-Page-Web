@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Lakshadweep</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="x-icon" href="assets/img/fav_icon.png" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav container">
+        <a href="index.html" class="nav__logo">
+          <i class="fas fa-umbrella-beach"></i> Lakshadweep
+        </a>
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="explore.html" class="nav__link">Explore</a>
+            </li>
+            <li class="nav__item">
+              <a href="booking.html" class="nav__link">Book</a>
+            </li>
+            <li class="nav__item">
+              <a href="register.html" class="nav__link active">Register</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <section class="register section">
+        <div class="register__container container">
+          <h1 class="register__title">Welcome to Lakshadweep</h1>
+          <p class="register__subtitle">Create an account to book your dream vacation</p>
+          
+          <div id="registerMessage" class="register__message" style="display: none;"></div>
+          
+          <form id="signupForm" class="register__form">
+            <h2 class="register__form-title">Sign Up</h2>
+            <div class="register__input-group">
+              <input type="text" name="name" class="register__input" placeholder="Full Name" required>
+              <i class="fas fa-user register__icon"></i>
+            </div>
+            <div class="register__input-group">
+              <input type="email" name="email" class="register__input" placeholder="Email" required>
+              <i class="fas fa-envelope register__icon"></i>
+            </div>
+            <div class="register__input-group">
+              <input type="password" name="password" class="register__input" placeholder="Password" required>
+              <i class="fas fa-lock register__icon"></i>
+            </div>
+            <div class="register__input-group">
+              <input type="password" name="confirmPassword" class="register__input" placeholder="Confirm Password" required>
+              <i class="fas fa-lock register__icon"></i>
+            </div>
+            <button type="submit" class="register__button">Sign Up</button>
+            <p class="register__toggle">
+              Already have an account? <a href="#" id="showSignIn">Sign In</a>
+            </p>
+          </form>
+
+          <form id="signinForm" class="register__form" style="display: none;">
+            <h2 class="register__form-title">Sign In</h2>
+            <div class="register__input-group">
+              <input type="email" name="email" class="register__input" placeholder="Email" required>
+              <i class="fas fa-envelope register__icon"></i>
+            </div>
+            <div class="register__input-group">
+              <input type="password" name="password" class="register__input" placeholder="Password" required>
+              <i class="fas fa-lock register__icon"></i>
+            </div>
+            <button type="submit" class="register__button">Sign In</button>
+            <p class="register__toggle">
+              Don't have an account? <a href="#" id="showSignUp">Sign Up</a>
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__container container">
+        <div class="footer__content">
+          <div class="footer__data">
+            <h3 class="footer__title">Lakshadweep</h3>
+            <p class="footer__description">
+              Discover the beauty of India's tropical paradise.
+            </p>
+            <div class="footer__social">
+              <a href="#" class="footer__social-link">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="#" class="footer__social-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="footer__social-link">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer__data">
+            <h3 class="footer__subtitle">About</h3>
+            <ul>
+              <li class="footer__item">
+                <a href="#" class="footer__link">About Us</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Features</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">News & Blog</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__data">
+            <h3 class="footer__subtitle">Company</h3>
+            <ul>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Team</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Plan y Pricing</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Become a member</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__data">
+            <h3 class="footer__subtitle">Support</h3>
+            <ul>
+              <li class="footer__item">
+                <a href="#" class="footer__link">FAQs</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Support Center</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__rights">
+          <p class="footer__copy">
+            &#169; 2024 Lakshadweep. All rights reserved.
+          </p>
+          <div class="footer__terms">
+            <a href="#" class="footer__terms-link">Terms & Agreements</a>
+            <a href="#" class="footer__terms-link">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/register.js"></script>
+  </body>
+</html> 

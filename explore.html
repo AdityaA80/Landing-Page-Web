@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Destinations | Lakshadweep</title>
+
+    <!-- ===============FAVICON=============== -->
+    <link rel="shortcut icon" type="x-icon" href="assets/img/fav_icon.png" />
+
+    <!-- ===============REMIXICON=============== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- ===============CSS=============== -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .explore__container {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .explore__title {
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--white-color);
+      }
+
+      .explore__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .explore__card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+
+      .explore__card:hover {
+        transform: translateY(-10px);
+      }
+
+      .explore__image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .explore__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+
+      .explore__card:hover .explore__img {
+        transform: scale(1.1);
+      }
+
+      .explore__content {
+        padding: 1.5rem;
+      }
+
+      .explore__name {
+        font-size: var(--h2-font-size);
+        color: var(--white-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .explore__description {
+        color: var(--text-color);
+        margin-bottom: 1rem;
+      }
+
+      .explore__features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .explore__feature {
+        color: var(--text-color);
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .explore__feature i {
+        color: var(--first-color);
+      }
+
+      .explore__button {
+        width: 100%;
+        padding: 0.8rem;
+        background: var(--first-color);
+        color: var(--white-color);
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background 0.3s;
+        margin-top: 1rem;
+      }
+
+      .explore__button:hover {
+        background: var(--first-color-alt);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===============HEADER=============== -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="index.html" class="nav__logo">Lakshadweep <span>India</span></a>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#footer" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#popular" class="nav__link">Popular</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#explore" class="nav__link">Explore</a>
+            </li>
+          </ul>
+
+          <!-- close button  -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-fill"></i>
+          </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ===============EXPLORE SECTION=============== -->
+    <section class="explore section">
+      <div class="explore__container container">
+        <h1 class="explore__title">Explore Our Destinations</h1>
+
+        <div class="explore__grid">
+          <!-- Kavaratti -->
+          <div class="explore__card">
+            <div class="explore__image">
+              <img src="assets/img/Kav.jpg" alt="Kavaratti" class="explore__img">
+            </div>
+            <div class="explore__content">
+              <h3 class="explore__name">Kavaratti</h3>
+              <p class="explore__description">The capital of Lakshadweep, known for its pristine beaches and vibrant marine life.</p>
+              <ul class="explore__features">
+                <li class="explore__feature"><i class="ri-map-pin-line"></i> Capital Island</li>
+                <li class="explore__feature"><i class="ri-water-percent-line"></i> Crystal Clear Waters</li>
+                <li class="explore__feature"><i class="ri-sailboat-line"></i> Water Sports</li>
+                <li class="explore__feature"><i class="ri-hotel-line"></i> Luxury Resorts</li>
+              </ul>
+              <a href="booking.html" class="explore__button">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Kalpeni -->
+          <div class="explore__card">
+            <div class="explore__image">
+              <img src="assets/img/m_Kalpeni.jpg" alt="Kalpeni" class="explore__img">
+            </div>
+            <div class="explore__content">
+              <h3 class="explore__name">Kalapani</h3>
+              <p class="explore__description">Famous for its unique coral formations and crystal clear waters.</p>
+              <ul class="explore__features">
+                <li class="explore__feature"><i class="ri-map-pin-line"></i> Coral Island</li>
+                <li class="explore__feature"><i class="ri-snorkel-line"></i> Snorkeling</li>
+                <li class="explore__feature"><i class="ri-sun-line"></i> Beautiful Beaches</li>
+                <li class="explore__feature"><i class="ri-restaurant-line"></i> Local Cuisine</li>
+              </ul>
+              <a href="booking.html" class="explore__button">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Andretti -->
+          <div class="explore__card">
+            <div class="explore__image">
+              <img src="assets/img/m_Andretti_lakshdweep.jpg" alt="Andretti" class="explore__img">
+            </div>
+            <div class="explore__content">
+              <h3 class="explore__name">Andretti</h3>
+              <p class="explore__description">A remote island paradise with untouched natural beauty.</p>
+              <ul class="explore__features">
+                <li class="explore__feature"><i class="ri-map-pin-line"></i> Remote Location</li>
+                <li class="explore__feature"><i class="ri-leaf-line"></i> Pristine Nature</li>
+                <li class="explore__feature"><i class="ri-camera-line"></i> Photography</li>
+                <li class="explore__feature"><i class="ri-hotel-line"></i> Beach Huts</li>
+              </ul>
+              <a href="booking.html" class="explore__button">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Minicoy -->
+          <div class="explore__card">
+            <div class="explore__image">
+              <img src="assets/img/Minicoy-Island.png" alt="Minicoy" class="explore__img">
+            </div>
+            <div class="explore__content">
+              <h3 class="explore__name">Minicoy</h3>
+              <p class="explore__description">The southernmost island with its iconic lighthouse and unique culture.</p>
+              <ul class="explore__features">
+                <li class="explore__feature"><i class="ri-map-pin-line"></i> Southernmost Island</li>
+                <li class="explore__feature"><i class="ri-lighthouse-line"></i> Historic Lighthouse</li>
+                <li class="explore__feature"><i class="ri-dance-line"></i> Cultural Shows</li>
+                <li class="explore__feature"><i class="ri-sailboat-line"></i> Boat Tours</li>
+              </ul>
+              <a href="booking.html" class="explore__button">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Bangaram -->
+          <div class="explore__card">
+            <div class="explore__image">
+              <img src="assets/img/C.jpg" alt="Bangaram" class="explore__img">
+            </div>
+            <div class="explore__content">
+              <h3 class="explore__name">Bangaram</h3>
+              <p class="explore__description">An exclusive island resort offering luxury and privacy.</p>
+              <ul class="explore__features">
+                <li class="explore__feature"><i class="ri-map-pin-line"></i> Private Island</li>
+                <li class="explore__feature"><i class="ri-hotel-line"></i> Luxury Resort</li>
+                <li class="explore__feature"><i class="ri-restaurant-line"></i> Fine Dining</li>
+                <li class="explore__feature"><i class="ri-sailboat-line"></i> Private Tours</li>
+              </ul>
+              <a href="booking.html" class="explore__button">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Kadmat -->
+          <div class="explore__card">
+            <div class="explore__image">
+              <img src="assets/img/m_Kadmath.jpg" alt="Kadmat" class="explore__img">
+            </div>
+            <div class="explore__content">
+              <h3 class="explore__name">Kadmat</h3>
+              <p class="explore__description">Perfect for water sports and beach activities.</p>
+              <ul class="explore__features">
+                <li class="explore__feature"><i class="ri-map-pin-line"></i> Water Sports Hub</li>
+                <li class="explore__feature"><i class="ri-sailboat-line"></i> Scuba Diving</li>
+                <li class="explore__feature"><i class="ri-snorkel-line"></i> Snorkeling</li>
+                <li class="explore__feature"><i class="ri-hotel-line"></i> Beach Resorts</li>
+              </ul>
+              <a href="booking.html" class="explore__button">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============SCROLLREVEAL=============== -->
+    <script src="assets/js/scrollrevealmin.js"></script>
+
+    <!-- ===============MAIN JS=============== -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      // Scroll Reveal Animation
+      const sr = ScrollReveal({
+        origin: 'bottom',
+        distance: '60px',
+        duration: 2500,
+        delay: 400,
+      });
+
+      sr.reveal('.explore__card', { interval: 200 });
+    </script>
+  </body>
+</html> 

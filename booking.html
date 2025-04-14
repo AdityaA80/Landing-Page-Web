@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Your Trip | Lakshadweep</title>
+
+    <!-- ===============FAVICON=============== -->
+    <link rel="shortcut icon" type="x-icon" href="assets/img/fav_icon.png" />
+
+    <!-- ===============REMIXICON=============== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- ===============CSS=============== -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .booking__container {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .booking__title {
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--white-color);
+      }
+
+      .booking__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .booking__card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+
+      .booking__card:hover {
+        transform: translateY(-10px);
+      }
+
+      .booking__image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .booking__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+
+      .booking__card:hover .booking__img {
+        transform: scale(1.1);
+      }
+
+      .booking__content {
+        padding: 1.5rem;
+      }
+
+      .booking__name {
+        font-size: var(--h2-font-size);
+        color: var(--white-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .booking__description {
+        color: var(--text-color);
+        margin-bottom: 1rem;
+      }
+
+      .booking__price {
+        font-size: var(--h3-font-size);
+        color: var(--first-color);
+        margin-bottom: 1rem;
+      }
+
+      .booking__button {
+        width: 100%;
+        padding: 0.8rem;
+        background: var(--first-color);
+        color: var(--white-color);
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .booking__button:hover {
+        background: var(--first-color-alt);
+      }
+
+      .booking__modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s;
+      }
+
+      .booking__modal-content {
+        background: var(--body-color);
+        padding: 2rem;
+        border-radius: 1rem;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      .booking__modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        color: var(--white-color);
+        cursor: pointer;
+      }
+
+      .booking__modal-title {
+        color: var(--white-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .booking__modal-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .booking__modal-input {
+        padding: 0.8rem;
+        border-radius: 0.5rem;
+        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--white-color);
+      }
+
+      .booking__modal-button {
+        padding: 0.8rem;
+        background: var(--first-color);
+        color: var(--white-color);
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .booking__modal-button:hover {
+        background: var(--first-color-alt);
+      }
+
+      .show-modal {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===============HEADER=============== -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="index.html" class="nav__logo">Lakshadweep <span>India</span></a>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#footer" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#popular" class="nav__link">Popular</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#explore" class="nav__link">Explore</a>
+            </li>
+          </ul>
+
+          <!-- close button  -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-fill"></i>
+          </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ===============BOOKING SECTION=============== -->
+    <section class="booking section">
+      <div class="booking__container container">
+        <h1 class="booking__title">Book Your Dream Destination</h1>
+
+        <div class="booking__grid">
+          <!-- Kavaratti -->
+          <div class="booking__card">
+            <div class="booking__image">
+              <img src="assets/img/Kav.jpg" alt="Kavaratti" class="booking__img">
+            </div>
+            <div class="booking__content">
+              <h3 class="booking__name">Kavaratti</h3>
+              <p class="booking__description">Experience the capital island's pristine beaches and vibrant marine life.</p>
+              <p class="booking__price">Starting from ₹15,000</p>
+              <button class="booking__button" data-destination="Kavaratti">Book Now</button>
+            </div>
+          </div>
+
+          <!-- Kalpeni -->
+          <div class="booking__card">
+            <div class="booking__image">
+              <img src="assets/img/m_Kalpeni.jpg" alt="Kalapani" class="booking__img">
+            </div>
+            <div class="booking__content">
+              <h3 class="booking__name">Kalapani</h3>
+              <p class="booking__description">Discover the unique coral formations and crystal clear waters.</p>
+              <p class="booking__price">Starting from ₹12,000</p>
+              <button class="booking__button" data-destination="Kalpeni">Book Now</button>
+            </div>
+          </div>
+
+          <!-- Andretti -->
+          <div class="booking__card">
+            <div class="booking__image">
+              <img src="assets/img/m_Andretti_lakshdweep.jpg" alt="Andretti" class="booking__img">
+            </div>
+            <div class="booking__content">
+              <h3 class="booking__name">Andretti</h3>
+              <p class="booking__description">Explore the untouched beauty of this remote island paradise.</p>
+              <p class="booking__price">Starting from ₹18,000</p>
+              <button class="booking__button" data-destination="Andretti">Book Now</button>
+            </div>
+          </div>
+
+          <!-- Minicoy -->
+          <div class="booking__card">
+            <div class="booking__image">
+              <img src="assets/img/Minicoy-Island.png" alt="Minicoy" class="booking__img">
+            </div>
+            <div class="booking__content">
+              <h3 class="booking__name">Minicoy</h3>
+              <p class="booking__description">Visit the southernmost island with its iconic lighthouse.</p>
+              <p class="booking__price">Starting from ₹20,000</p>
+              <button class="booking__button" data-destination="Minicoy">Book Now</button>
+            </div>
+          </div>
+
+          <!-- Bangaram -->
+          <div class="booking__card">
+            <div class="booking__image">
+              <img src="assets/img/C.jpg" alt="Bangaram" class="booking__img">
+            </div>
+            <div class="booking__content">
+              <h3 class="booking__name">Bangaram</h3>
+              <p class="booking__description">Experience luxury in this exclusive island resort.</p>
+              <p class="booking__price">Starting from ₹25,000</p>
+              <button class="booking__button" data-destination="Bangaram">Book Now</button>
+            </div>
+          </div>
+
+          <!-- Kadmat -->
+          <div class="booking__card">
+            <div class="booking__image">
+              <img src="assets/img/m_Kadmath.jpg" alt="Kadmat" class="booking__img">
+            </div>
+            <div class="booking__content">
+              <h3 class="booking__name">Kadmat</h3>
+              <p class="booking__description">Perfect for water sports and beach activities.</p>
+              <p class="booking__price">Starting from ₹16,000</p>
+              <button class="booking__button" data-destination="Kadmat">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="booking__modal" id="bookingModal">
+      <div class="booking__modal-content">
+        <i class="ri-close-line booking__modal-close" id="modalClose"></i>
+        <h2 class="booking__modal-title">Book Your Trip</h2>
+        <form class="booking__modal-form" id="bookingForm">
+          <input type="text" class="booking__modal-input" placeholder="Full Name" required>
+          <input type="email" class="booking__modal-input" placeholder="Email" required>
+          <input type="tel" class="booking__modal-input" placeholder="Phone Number" required>
+          <input type="date" class="booking__modal-input" required>
+          <input type="number" class="booking__modal-input" placeholder="Number of People" required>
+          <button type="submit" class="booking__modal-button">Confirm Booking</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===============SCROLLREVEAL=============== -->
+    <script src="assets/js/scrollrevealmin.js"></script>
+
+    <!-- ===============MAIN JS=============== -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      // Booking Modal
+      const modal = document.getElementById('bookingModal');
+      const modalClose = document.getElementById('modalClose');
+      const bookingButtons = document.querySelectorAll('.booking__button');
+      const bookingForm = document.getElementById('bookingForm');
+
+      // Show modal when booking button is clicked
+      bookingButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          modal.classList.add('show-modal');
+        });
+      });
+
+      // Close modal
+      modalClose.addEventListener('click', () => {
+        modal.classList.remove('show-modal');
+      });
+
+      // Close modal when clicking outside
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('show-modal');
+        }
+      });
+
+      // Handle form submission
+      bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Here you would typically send the booking data to your backend
+        alert('Booking successful! We will contact you shortly.');
+        modal.classList.remove('show-modal');
+        bookingForm.reset();
+      });
+
+      // Scroll Reveal Animation
+      const sr = ScrollReveal({
+        origin: 'bottom',
+        distance: '60px',
+        duration: 2500,
+        delay: 400,
+      });
+
+      sr.reveal('.booking__card', { interval: 200 });
+    </script>
+  </body>
+</html> 
